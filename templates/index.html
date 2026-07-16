@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SoundCleaner Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
+            <img src="{{ url_for('static', filename='logo.png') }}" width="60" alt="Logo">
+            <div>
+                <h1>SoundCleaner Pro</h1>
+                <p>Remove noise, control bass, download cleaned audio</p>
+            </div>
+        </header>
+
+        <div class="upload-box">
+            <input type="file" id="audioInput" accept="audio/*">
+            <button onclick="uploadAudio()">Process Audio</button>
+        </div>
+
+        <div class="controls">
+            <h3>Music Controls</h3>
+            <audio id="player" controls></audio>
+
+            <h3>Bass Control</h3>
+            <input type="range" id="bassSlider" min="-10" max="10" value="0">
+            <span id="bassValue">0</span>
+
+            <h3>Download</h3>
+            <a id="downloadLink" style="display:none; padding:10px 20px; background:#4CAF50; color:white; text-decoration:none; border-radius:5px;" download="hello_clean.mp3">
+                Download hello_clean.mp3
+            </a>
+        </div>
+
+        <div id="status"></div>
+
+        <footer style="text-align:center; font-size:12px; margin-top:30px;">
+            <a href="https://www.flaticon.com/free-icons/sound-wave" title="sound wave icons">Sound wave icons created by edt.im - Flaticon</a>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
