@@ -1,0 +1,6 @@
+   Flask
+   gunicorn
+   librosa
+   noisereduce
+   soundfile
+   numpy
